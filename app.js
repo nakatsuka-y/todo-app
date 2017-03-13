@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/todo-app');
+var db = monk('peaceful-eyrie-56011:27017/todo-app');
 
 var index = require('./routes/index');
 // var users = require('./routes/users');
