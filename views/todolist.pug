@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1.
+    ToDo List
+  unless todolist == ""
+    p Tasks For Today!
+    a(href="/newtask") Add a Task
+    ul
+      each todo, i in todolist
+        form(name="updatetask", method="post", action="/updatetask")
+          li
+          if todo.checked == "on"
+            input(type="checkbox" name=""+todo.task checked id=""+i onChange="this.form.submit()")
+            label(for=""+i) #{todo.task}
+            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+          else 
+            input(type="checkbox" name="checked" id=""+i onChange="this.form.submit()")
+            label(for=""+i) #{todo.task}
+            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+  else
+    p No Tasks Yet!
+    a(href="/newtask") Add a Task
