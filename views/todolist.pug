@@ -5,16 +5,25 @@ block content
     h1 Tasks For Today!
     ul.todos
       each todo, i in todolist
-        form(name="updatetask", method="post", action="/updatetask")
-          li.todo
-          if todo.checked == "on"
-            input.check(type="checkbox" name=""+todo.task checked id=""+i onChange="this.form.submit()")
+        li.todo
+        if todo.checked == "on"
+          form(name="updatetask", method="post", action="/updatetask")
+            input.check(type="checkbox" name="checked" checked id=""+i onChange="this.form.submit()")
             label.task(for=""+i style="text-decoration: line-through") #{todo.task}
             input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
-          else 
+          form(name="deletetask", method="post", action="/deletetask")
+            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+            input.btn.btn-primary.delete(type="button" name="del" value="Delete Task" onClick="this.form.submit()")
+        else 
+          form(name="updatetask", method="post", action="/updatetask")
             input.check(type="checkbox" name="checked" id=""+i onChange="this.form.submit()")
             label.task(for=""+i) #{todo.task}
             input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+          form(name="deletetask", method="post", action="/deletetask")
+            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+            input.btn.btn-primary.delete(type="button" name="del" value="Delete Task" onClick="this.form.submit()")
   else
-    p No Tasks Yet!
-    a(href="/newtask") Add a Task
+    h1 No Tasks!
+    div.center
+      h6 (Yippiee!)
+      a.btn.btn-primary(href="/newtask") Add a Task

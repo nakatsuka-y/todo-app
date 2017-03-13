@@ -67,18 +67,26 @@ p {
 }
 
 /* tasks */
+.newtodo {
+  width: 20em;
+  margin: 0 auto 2em;
+}
 .todos {
   margin: auto;
   list-style: none;
   padding-left: 10em;
 }
 .todo {
-    padding-top: 1em;
-  }
+  padding-top: 1em;
+}
 .check {
   transform: scale(2);
 }
 .task {
   font-size: 2em;
   padding-left: 1em;
+}
+.delete {
+  margin: -3em 15em 0em 3em;
+  float: right;
 }

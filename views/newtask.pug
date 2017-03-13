@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1 What's up for today?
-  form.center(name="addtask",method="post",action="/addtask")
-    input(type="text", placeholder="task", name="task")
-    button(type="submit") submit
+  div.center
+    form(name="addtask",method="post",action="/addtask")
+      input.form-control.newtodo(type="text", placeholder="task", name="task")
+      button.btn.btn-primary(type="submit") submit
