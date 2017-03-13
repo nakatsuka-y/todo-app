@@ -1,22 +1,19 @@
 extends layout
 
 block content
-  h1.
-    ToDo List
   unless todolist == ""
-    p Tasks For Today!
-    a(href="/newtask") Add a Task
-    ul
+    h1 Tasks For Today!
+    ul.todos
       each todo, i in todolist
         form(name="updatetask", method="post", action="/updatetask")
-          li
+          li.todo
           if todo.checked == "on"
-            input(type="checkbox" name=""+todo.task checked id=""+i onChange="this.form.submit()")
-            label(for=""+i) #{todo.task}
+            input.check(type="checkbox" name=""+todo.task checked id=""+i onChange="this.form.submit()")
+            label.task(for=""+i style="text-decoration: line-through") #{todo.task}
             input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
           else 
-            input(type="checkbox" name="checked" id=""+i onChange="this.form.submit()")
-            label(for=""+i) #{todo.task}
+            input.check(type="checkbox" name="checked" id=""+i onChange="this.form.submit()")
+            label.task(for=""+i) #{todo.task}
             input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
   else
     p No Tasks Yet!

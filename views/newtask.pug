@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  form#formAddUser(name="addtask",method="post",action="/addtask")
+  h1 What's up for today?
+  form.center(name="addtask",method="post",action="/addtask")
     input(type="text", placeholder="task", name="task")
-    button#btnSubmit(type="submit") submit
+    button(type="submit") submit
