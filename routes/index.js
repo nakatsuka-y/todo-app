@@ -60,6 +60,7 @@ router.post('/updatetask', function(req, res, next) {
   // Get form values
   var task = req.body.task;
   var checked = req.body.checked;
+  console.log(req.body)
 
   // Set collection
   var collection = db.get('todocollection');
@@ -89,7 +90,6 @@ router.post('/deletetask', function(req, res, next) {
   // Get form values
   var task = req.body.task;
   var checked = req.body.checked;
-  var del = req.body.del;
   console.log(req.body)
 
   // Set collection

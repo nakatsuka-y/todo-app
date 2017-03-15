@@ -7,21 +7,27 @@ block content
       each todo, i in todolist
         li.todo
         if todo.checked == "on"
-          form(name="updatetask", method="post", action="/updatetask")
-            input.check(type="checkbox" name="checked" checked id=""+i onChange="this.form.submit()")
-            label.task(for=""+i style="text-decoration: line-through") #{todo.task}
-            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
-          form(name="deletetask", method="post", action="/deletetask")
-            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
-            input.btn.btn-primary.delete(type="button" name="del" value="Delete Task" onClick="this.form.submit()")
+          div.row
+            div.col-xs-12.col-sm-6.col-md-8
+              form(name="updatetask", method="post", action="/updatetask")
+                input.check(type="checkbox" name="checked" checked id=""+i onChange="this.form.submit()")
+                label.task(for=""+i style="text-decoration: line-through") #{todo.task}
+                input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+            div.col-xs-6.col-md-4
+              form(name="deletetask", method="post", action="/deletetask")
+                input(type="text" name="task" value=""+todo.task hidden)
+                input.btn.btn-primary.delete(type="button" name="del" value="Delete Task" onClick="this.form.submit()")
         else 
-          form(name="updatetask", method="post", action="/updatetask")
-            input.check(type="checkbox" name="checked" id=""+i onChange="this.form.submit()")
-            label.task(for=""+i) #{todo.task}
-            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
-          form(name="deletetask", method="post", action="/deletetask")
-            input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
-            input.btn.btn-primary.delete(type="button" name="del" value="Delete Task" onClick="this.form.submit()")
+          div.row
+            div.col-xs-12.col-sm-6.col-md-8
+              form(name="updatetask", method="post", action="/updatetask")
+                input.check(type="checkbox" name="checked" id=""+i onChange="this.form.submit()")
+                label.task(for=""+i) #{todo.task}
+                input(type="text" name="task" value=""+todo.task hidden onChange="this.form.submit()")
+            div.col-xs-6.col-md-4
+              form(name="deletetask", method="post", action="/deletetask")
+                input(type="text" name="task" value=""+todo.task hidden)
+                input.btn.btn-primary.delete(type="button" name="del" value="Delete Task" onClick="this.form.submit()")
   else
     h1 No Tasks!
     div.center

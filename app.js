@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://yoshimichi:herokutodoapp@ds129030.mlab.com:29030/heroku_sh2fg9qv');
+var uri = process.env.MONGOLAB_URI;
+var db = monk(uri);
 
 var index = require('./routes/index');
 // var users = require('./routes/users');

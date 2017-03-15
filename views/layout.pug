@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
@@ -12,5 +13,5 @@ html
           ul.nav.navbar-nav.navbar-right
             li
               a(href="/newtask") Add a Task
-    dif.container
+    div.container
       block content

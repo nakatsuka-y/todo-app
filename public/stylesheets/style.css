@@ -74,7 +74,6 @@ p {
 .todos {
   margin: auto;
   list-style: none;
-  padding-left: 10em;
 }
 .todo {
   padding-top: 1em;
@@ -85,8 +84,11 @@ p {
 .task {
   font-size: 2em;
   padding-left: 1em;
+  margin: -1em 0em 0em 1em;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .delete {
-  margin: -3em 15em 0em 3em;
+  margin: 0em 0em 0em 3em;
   float: right;
 }
